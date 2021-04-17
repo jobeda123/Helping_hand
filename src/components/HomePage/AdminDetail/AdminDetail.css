@@ -1,0 +1,14 @@
+.admin-card{
+    border-radius: 5px;
+    padding:10px;
+    box-shadow: 5px 5px 5px gray;
+    width: 200px;
+    
+}
+
+.admin-card:hover {
+    transform: scale(1.2);
+    transition: transform 3s;
+    background-color:rgb(112, 112, 206);
+    color: white;
+  }
