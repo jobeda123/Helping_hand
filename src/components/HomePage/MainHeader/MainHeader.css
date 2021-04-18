@@ -1,5 +1,5 @@
 .mainHeader{
-    background-image: url('../../../Images/1.jpg');
+    background-image: url('../../../Images/test.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
@@ -7,10 +7,17 @@
     background-position: center center;
 }
 
+.op-1{
+    color: black;
+}
+
 .mainHeader-text{
     z-index: 200 !important;
     color: white;
-    padding-top: 200px;
+    padding-top: 120px;
+    font-style: italic;
+    font-family: 'Lobster', cursive;
+    font-size: 300px;
 }
 
 .mainHeader::before{
@@ -19,7 +26,7 @@
     width: 100%;
     height: 100%;
     position: absolute;
-    background: rgb(36, 41, 73);
-    opacity: .7;
+    background: pink;
+    opacity: .3;
     top: 0;
 }

@@ -1,0 +1,18 @@
+.bookBack{
+    background-image: url('../../../Images/test.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    min-height: 1000px;
+    width: 1250px;
+    background-position: center center;
+    margin-left: 300px;
+    padding-left: 100px;
+}
+
+.area{
+    position: absolute;
+    z-index: 200;
+}
+
+

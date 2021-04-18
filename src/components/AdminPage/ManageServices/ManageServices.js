@@ -18,7 +18,7 @@ const ManageServices = () => {
     const [allService, setAllService] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5555/allService')
+        fetch('https://enigmatic-crag-72285.herokuapp.com/allService')
             .then(res => res.json())
             .then(data => {
                 console.log("Data in all service in admin: ", data);
@@ -29,15 +29,17 @@ const ManageServices = () => {
 
     return (
         <div className="row d-flex">
-            <div className="col-md-3">
-                <SideNavBar></SideNavBar>
-            </div>
-            <div className="col-md-9">
-                <h1>All Service List:{allService.length}</h1>
-                <div className="row row-cols-3">
-                    {
-                        allService.map(service => <ManageServiceCard service={service}></ManageServiceCard>)
-                    }
+            <div className="text-white">
+                <div className="col-md-3">
+                    <SideNavBar></SideNavBar>
+                </div>
+                <div className="col-md-9 bookBack">
+                    <h1 className="brandTitle mb-5 pt-4">All Service List {allService.length}</h1>
+                    <div className="row row-cols-3">
+                        {
+                            allService.map(service => <ManageServiceCard service={service}></ManageServiceCard>)
+                        }
+                    </div>
                 </div>
             </div>
         </div>

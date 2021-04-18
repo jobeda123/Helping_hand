@@ -9,6 +9,7 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import './OrderStatus.css';
 
 
 const OrderStatus = () => {
@@ -16,7 +17,7 @@ const OrderStatus = () => {
     const [allUserInfo, setAllUserInfo] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5555/allServiceList')
+        fetch('https://enigmatic-crag-72285.herokuapp.com/allServiceList')
             .then(res => res.json())
             .then(data => {
                 console.log("Data in order status: ", data);
@@ -28,12 +29,14 @@ const OrderStatus = () => {
     // for table
     const StyledTableCell = withStyles(() => ({
         head: {
-            backgroundColor: 'green',
+            backgroundColor: 'pink',
             color: 'white',
+            fontWeight: 'bold',
+            fontSize: 16,
         },
         body: {
-            fontSize: 14,
-            fontWeight: 'bold',
+            fontSize: 16,
+            color: 'rgb(112, 112, 206)',
         },
     }))(TableCell);
 
@@ -59,9 +62,11 @@ const OrderStatus = () => {
             <div className="col-md-3">
                 <SideNavBar></SideNavBar>
             </div>
-            <div className="col-md-9">
-                <div className="orderStatusArea">
-                    <h1>Order Status {allUserInfo.length}</h1>
+            <div className="col-md-9  reviewBack">
+                <div className="orderStatusArea  tableArea">
+                    <div>
+                        <h1 className="brandTitle pt-3 mb-3">Order Status {allUserInfo.length}</h1>
+                    </div>
                     <TableContainer component={Paper}>
                         <Table className={classes.table} aria-label="customized table">
                             <TableHead>

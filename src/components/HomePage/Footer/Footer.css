@@ -1,9 +1,10 @@
 .footer-area{
-    background-image: linear-gradient(to right, lightblue, green);
+    background-image: linear-gradient(to top, palevioletred, pink);
+    opacity: 0.9;
 }
 
-.footer-area li{
-    padding-bottom: 10px;
+.footer-div{
+   padding-left: 180px;
 }
 
 .social-media .icon{
@@ -11,7 +12,7 @@
     width: 40px;
     color: #1cc7c1;
     border-radius: 50%;
-    border: 1px solid #6ACECE;
+    border: 2px solid white;
     padding: 10px;
 }
 .social-media .active-icon{

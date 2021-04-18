@@ -34,7 +34,7 @@ const AddReview = () => {
     //     formData.append('country', info.country);
     //     formData.append('reviewDescription', info.reviewDescription);
 
-    //     fetch('http://localhost:5555/addReview', {
+    //     fetch('https://enigmatic-crag-72285.herokuapp.com/addReview', {
     //         method: 'POST',
     //         body: formData
     //     })
@@ -59,7 +59,7 @@ const AddReview = () => {
             imageURL: imageURL,
         }
 
-        const url = `http://localhost:5555/addReview`;
+        const url = `https://enigmatic-crag-72285.herokuapp.com/addReview`;
         console.log(eventData);
         fetch(url, {
             method: 'POST',
@@ -101,33 +101,12 @@ const AddReview = () => {
             <div className="col-md-3">
                 <SideNavBar></SideNavBar>
             </div>
-            <div className="col-md-9">
-                <h1>Add Review by user</h1>
+            <div className="col-md-9 reviewBack">
+                <div>
+                <h1 className="pt-3 mb-3 brandTitle">Add Review</h1>
+                </div>
                 <div className="reviewCardArea">
-                    {/* <form onSubmit={handleSubmit}>
-                        <div className="form-group">
-                            <input onBlur={handleBlur} type="text" className="form-control" name="name" placeholder="Enter Name" />
-                        </div>
-
-                        <div className="form-group">
-                            <input onBlur={handleBlur} type="email" className="form-control" name="email" placeholder="Enter Email" />
-                        </div>
-
-                        <div className="form-group">
-                            <input onBlur={handleBlur} type="text" className="form-control" name="country" placeholder="Enter Country Name" />
-                        </div>
-
-                        <div class="form-group">
-                            <textarea onBlur={handleBlur} class="form-control" placeholder="Enter Your Review" name="reviewDescription"></textarea>
-                        </div>
-
-                        <div className="form-group">
-                            <input onChange={handleFileChange} type="file" className="form-control" id="exampleInputPassword1" placeholder="Upload Your Picture" />
-                        </div>
-
-                        <button type="submit" className="btn btn-primary">Submit</button>
-                    </form> */}
-                    <form className="formArea section" onSubmit={handleSubmit(onSubmit)}>
+                    <form className="section" onSubmit={handleSubmit(onSubmit)}>
                     <div>
                         <input id="inputField1" name="name" placeholder="Name" type="text" ref={register} required />
                     </div>
@@ -146,11 +125,11 @@ const AddReview = () => {
                     
                     <br />
                     <div>
-                        <input onChange={handleImageUpload} type="file" required />
+                        <input onChange={handleImageUpload}  type="file" required />
                     </div>
                     <br />
 
-                    <input type="submit" />
+                    <input className="brandButton" type="submit" />
                 </form>
                 </div>
             </div>

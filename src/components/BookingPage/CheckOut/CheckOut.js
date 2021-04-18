@@ -6,25 +6,23 @@ import { UserContext } from '../../../App';
 
 
 const CheckOut = () => {
-    const [ loggedInUser, setLoggedInUser ] = useContext(UserContext);
-    console.log("user Info: ",loggedInUser);
-    const {serviceName, price} = loggedInUser.service;
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext);
+    console.log("user Info at checkout: ", loggedInUser);
+    const { price, name } = loggedInUser.service;
+
 
     return (
         <div className="checkout-area">
-            <div className="checkout-header d-flex">
-                <h1 style={{ marginLeft: "80px", marginTop: "25px" }}>Book</h1>
-                <h4 className="text-dark" style={{ marginLeft: "700px", marginTop: "40px" }}>{loggedInUser.name}</h4>
-            </div>
-
-            <div className="checkout-body d-flex">
-                <div>
-                    <h1>Checkout description</h1>
-                    <h3>Service Type: {serviceName}</h3>
-                    <h4>Service Charge: {price} tk </h4>
-                </div>
-                <div className="checkout-card">
-                    <ProcessPayment></ProcessPayment>
+            <div className="checkout-body">
+                <h1 className="brandTitle">Check Out</h1>
+                <div className="row d-flex">
+                    <div className="col-md-6 text-white pt-5">
+                        <h3>Service Type: {name}</h3>
+                        <h4>Service Charge: {price} tk </h4>
+                    </div>
+                    <div className="checkout-card col-md-6 mt-5">
+                        <ProcessPayment></ProcessPayment>
+                    </div>
                 </div>
             </div>
         </div>

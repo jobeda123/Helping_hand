@@ -1,5 +1,13 @@
 .benefit-card{
     padding:10px;
-    box-shadow: 5px 5px 5px gray;
+    /* box-shadow: 5px 10px palevioletred; */
+    /* background-color: rgb(112, 112, 206); */
     width: 200px;
+    animation: mymove 5s infinite;
+    color:black;
+}
+
+
+@keyframes mymove {
+    50% {box-shadow: 10px 20px palevioletred;}
 }

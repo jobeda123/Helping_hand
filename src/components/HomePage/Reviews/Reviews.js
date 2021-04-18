@@ -33,7 +33,7 @@ const Reviews = () => {
     const [allReview, setAllReview] = useState([]);
 
     useEffect( () => {
-        fetch('http://localhost:5555/allReview')
+        fetch('https://enigmatic-crag-72285.herokuapp.com/allReview')
         .then(res => res.json())
         .then(data => {
             setAllReview(data);
@@ -43,9 +43,9 @@ const Reviews = () => {
 
     return (
         <section style={{ marginTop: "100px" }} className="container">
-            <h1 className="mt-5">Some Happy Faces {allReview.length}</h1>
-            <h1 className="mb-5">________</h1>
-            <div className="row d-flex justify-content-center">
+            <h1 className="brandTitle">Some Happy Faces {allReview.length}</h1>
+            <h1 className="mb-5 brandTitle">________</h1>
+            <div className="row d-flex mt-5">
                 {
                     allReview.map(review=> <Review review={review}></Review>)
                 }

@@ -1,13 +1,8 @@
-.bookCardDetail{
-    width:300px;
-    height:200px;
-    box-shadow: 5px 5px 5px gray;
-    /* background-color:darkslategray; */
+*{
+    margin:0px;
 }
 
-
-/* .bookCardDetail:hover {
+.bookCardDetail:hover {
     transform: scale(1.2);
-    transition: transform 3s;
-    background-color:brown;
-  } */
+    transition: transform 2s;
+  }

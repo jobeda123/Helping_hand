@@ -20,7 +20,7 @@ const AddAdminForm = () => {
             imageURL: imageURL,
         }
 
-        const url = `http://localhost:5555/addAdmin`;
+        const url = `https://enigmatic-crag-72285.herokuapp.com/addAdmin`;
         console.log(eventData);
         fetch(url, {
             method: 'POST',
@@ -59,9 +59,11 @@ const AddAdminForm = () => {
     }
 
     return (
-        <div className="addAdminArea">
-            <h1>Add Admin</h1>
-            <form className="formArea section" onSubmit={handleSubmit(onSubmit)}>
+        <div className="">
+            <div className="text-white pt-3 mb-3">
+                <h1 className="brandTitle">Add Admin</h1>
+            </div>
+            <form className="reviewCardArea section" onSubmit={handleSubmit(onSubmit)}>
                 <div>
                     <input id="inputField1" name="adminName" placeholder="Name" type="text" ref={register} required />
                 </div>
@@ -79,7 +81,7 @@ const AddAdminForm = () => {
                 </div>
                 <br />
 
-                <input type="submit" />
+                <input className="brandButton" type="submit" />
             </form>
 
         </div>

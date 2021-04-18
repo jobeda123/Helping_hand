@@ -44,11 +44,11 @@ const servicesData = [
 
 const Services = () => {
     const [services, setServices] = useState([]);
-    const [loading, setLoading] = useState(true);
+    // const [loading, setLoading] = useState(true);
 
 
     useEffect(() => {
-        fetch('http://localhost:5555/services')
+        fetch('https://enigmatic-crag-72285.herokuapp.com/services')
             .then(res => res.json())
             .then(data => {
                 setServices(data);
@@ -58,8 +58,8 @@ const Services = () => {
 
     return (
         <section style={{ marginTop:"100px"}} className="container">
-            <h1 className="mt-5">Our Services{services.length}</h1>
-            <h1 className="mb-5">________</h1>
+            <h1 className="brandTitle">Our Services {services.length}</h1>
+            <h1 className="mb-5 brandTitle">________</h1>
             <div className="row">
                 {
                     services.map(service => <ServiceDetail service={service}></ServiceDetail>)

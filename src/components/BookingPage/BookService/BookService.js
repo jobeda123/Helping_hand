@@ -5,11 +5,12 @@ import './BookService.css';
 
 
 const BookService = () => {
-    
+
     return (
-        <div className="d-flex">
-            {/* <SideNavBar></SideNavBar> */}
-            <CheckOut></CheckOut>
+        <div className="row d-flex">
+            <div>
+                <CheckOut></CheckOut>
+            </div>
         </div>
     );
 };

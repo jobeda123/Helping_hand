@@ -1,15 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const FooterCol = (props) => {
     return (
-        <div className="col-md-3">
-            <h6 className="text-primary">{props.menuTitle ? props.menuTitle : " "}</h6>
-            <ul className="list-unstyled mt-4">
+        <div className="col-md-4">
+            <h5 className="text-white">{props.menuTitle}</h5>
+            <div className="mt-4 left">
                  {
-                     props.menuItems.map((item, index) => <li key={index}><Link to={item.link} className="text-secondary">{item.name}</Link></li>)
+                     props.menuItems.map((item, index) => <h6 className="text-dark" key={index}>{item.name}</h6>)
                  }
-            </ul>
+            </div>
             {props.children && props.children}
         </div>
     );

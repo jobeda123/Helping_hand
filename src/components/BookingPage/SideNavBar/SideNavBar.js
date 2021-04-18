@@ -6,10 +6,8 @@ import managePic from '../../../Images/manage.png';
 import addPic from '../../../Images/add.png';
 import homePic from '../../../Images/home.png';
 import { useContext } from 'react';
-// import { UserContext } from '../../App';
 import { faBackward } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 import { useEffect, useState } from 'react';
 import { faCog, faSignOutAlt, faCalendar, faHome, faGripHorizontal, faUserPlus, faUsers } from '@fortawesome/free-solid-svg-icons';
 import { faFileAlt } from '@fortawesome/free-regular-svg-icons'
@@ -23,7 +21,7 @@ const SideNavBar = () => {
     console.log("info at side nav bar: ", loggedInUser);
 
     useEffect(() => {
-        fetch('http://localhost:5555/isAdmin', {
+        fetch('https://enigmatic-crag-72285.herokuapp.com/isAdmin', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify({ email: loggedInUser.email })
@@ -34,8 +32,7 @@ const SideNavBar = () => {
 
     return (
         <div className="adminNavbarArea">
-            <img id="logoImg" src={homePic} alt="" />
-
+            <h2 className="brandTitle text-white">Helping Hand</h2>
             <div className="navButton">
                 <Link to='/bookingList'> <button >Booking Service List</button></Link>
             </div>

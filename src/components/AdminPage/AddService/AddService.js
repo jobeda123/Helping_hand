@@ -3,6 +3,7 @@ import axios from 'axios';
 import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { UserContext } from '../../../App';
+import './AddService.css';
 
 
 
@@ -20,7 +21,7 @@ const AddService = () => {
             imageURL: imageURL,
         }
 
-        const url = `http://localhost:5555/addService`;
+        const url = `https://enigmatic-crag-72285.herokuapp.com/addService`;
         console.log(eventData);
         fetch(url, {
             method: 'POST',
@@ -61,11 +62,15 @@ const AddService = () => {
 
 
     return (
-        <div className="d-flex">
-            <SideNavBar></SideNavBar>
-            <div className="addServiceArea">
-                <h1>Add Service</h1>
-                <form className="formArea section" onSubmit={handleSubmit(onSubmit)}>
+        <div className="row d-flex">
+            <div className="col-md-3">
+                <SideNavBar></SideNavBar>
+            </div>
+            <div className="com-md-3 reviewBack">
+                <div>
+                    <h1 className="brandTitle pt-3 mb-3">Add Service</h1>
+                </div>
+                <form className="reviewCardArea section" onSubmit={handleSubmit(onSubmit)}>
                     <div>
                         <input id="inputField1" name="serviceName" placeholder="Service Name" type="text" ref={register} required />
                     </div>
@@ -83,7 +88,7 @@ const AddService = () => {
                     </div>
                     <br />
 
-                    <input type="submit" />
+                    <input className="brandButton" type="submit" />
                 </form>
 
             </div>

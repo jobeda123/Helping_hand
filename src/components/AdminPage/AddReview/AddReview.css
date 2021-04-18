@@ -1,6 +1,22 @@
 .reviewCardArea{
-    width:700px;
+    width:600px;
     padding:50px;
-    background-color:coral;
+    height:600px;
+    background-color:gray;
     box-shadow: 5px 5px 5px gray;
+    border-radius:10px;
+    position:absolute;
+    margin-left: 250px;
+}
+
+.reviewBack{
+    background-image: url('../../../Images/test.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    min-height: 1000px;
+    width: 1250px;
+    background-position: center center;
+    margin-left: 300px;
+    padding-left: 100px;
 }

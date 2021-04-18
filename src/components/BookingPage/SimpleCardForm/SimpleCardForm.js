@@ -14,13 +14,13 @@ import { useHistory } from "react-router-dom";
 // import useResponsiveFontSize from "../../useResponsiveFontSize";
 
 const useOptions = () => {
-//   const fontSize = useResponsiveFontSize();
+  //   const fontSize = useResponsiveFontSize();
   const options = useMemo(
     () => ({
       style: {
         base: {
           fontSize: "16px",
-          color: "#424770",
+          color: "palevioletred",
           letterSpacing: "0.025em",
           fontFamily: "Source Code Pro, monospace",
           "::placeholder": {
@@ -28,7 +28,7 @@ const useOptions = () => {
           }
         },
         invalid: {
-          color: "#9e2146"
+          color: "red"
         }
       }
     }),
@@ -59,7 +59,7 @@ const SimpleCardForm = () => {
       card: elements.getElement(CardNumberElement)
     });
     console.log("[PaymentMethod]", payload);
-    console.log("Payment ID: ",payload.paymentMethod.id);
+    console.log("Payment ID: ", payload.paymentMethod.id);
     const newCart = {};
     newCart.userName = loggedInUser.name;
     newCart.email = loggedInUser.email;
@@ -68,28 +68,28 @@ const SimpleCardForm = () => {
     newCart.price = loggedInUser.service.price;
     newCart.cardID = payload.paymentMethod.id;
     newCart.OrderStatus = "pending";
-    const info = {...loggedInUser};
+    const info = { ...loggedInUser };
 
     setLoggedInUser(info);
-    console.log("New cart: ",newCart);
+    console.log("New cart: ", newCart);
 
-    fetch('http://localhost:5555/addBookService',{
+    fetch('https://enigmatic-crag-72285.herokuapp.com/addBookService', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newCart)
     })
-    .then(res => res.json())
-    .then(success =>{
-      if(success){
-        alert('Book Your Service Successfully...');
-        history.push("/home");
-        // window.location.reload();
-      }
-    })
+      .then(res => res.json())
+      .then(success => {
+        if (success) {
+          alert('Book Your Service Successfully...');
+          history.push("/home");
+          // window.location.reload();
+        }
+      })
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="formStyle" onSubmit={handleSubmit}>
       <label>
         Card number
         <CardNumberElement
@@ -108,7 +108,7 @@ const SimpleCardForm = () => {
           }}
         />
       </label>
-      <br/>
+      <br />
       <label>
         Expiration date
         <CardExpiryElement
@@ -127,7 +127,7 @@ const SimpleCardForm = () => {
           }}
         />
       </label>
-    
+
       <label className="ps-5">
         CVC
         <CardCvcElement
@@ -146,8 +146,8 @@ const SimpleCardForm = () => {
           }}
         />
       </label>
-      <br/>
-      <button type="submit" disabled={!stripe}>
+      <br />
+      <button className="brandButton" type="submit" disabled={!stripe}>
         Pay
       </button>
     </form>

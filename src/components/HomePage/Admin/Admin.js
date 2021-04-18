@@ -30,7 +30,7 @@ const Admin = () => {
     const [allAdmin, setAllAdmin] = useState([]);
 
     useEffect( () => {
-        fetch('http://localhost:5555/allAdmin')
+        fetch('https://enigmatic-crag-72285.herokuapp.com/allAdmin')
         .then(res => res.json())
         .then(data => {
             setAllAdmin(data);
@@ -40,8 +40,8 @@ const Admin = () => {
 
     return (
         <section style={{ marginTop:"100px"}} className="container">
-            <h1 className="mt-5">Our Team</h1>
-            <h1 className="mb-5">________</h1>
+            <h1 className="brandTitle">Our Team</h1>
+            <h1 className="mb-2 brandTitle">________</h1>
             <div className="row">
                 {
                     allAdmin.map(admin => <AdminDetail admin={admin}></AdminDetail>)

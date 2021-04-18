@@ -1,3 +1,17 @@
 .card-area{
     padding: 0px;
 }
+
+.bookButton{
+    width:100% !important;
+}
+
+.serviceCardArea:hover{
+    transform: scale(1.2);
+    transition: transform 2s;
+    background-color:rgb(112, 112, 206);
+    color: white;
+    padding:20px;
+}
+
+

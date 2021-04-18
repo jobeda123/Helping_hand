@@ -6,7 +6,7 @@ const ManageServiceCard = ({ service }) => {
 
     const handleServiceRemove = (id) => {
         console.log("Remove Clicking.......", id);
-        fetch(`http://localhost:5555/delete/${id}`, {
+        fetch(`https://enigmatic-crag-72285.herokuapp.com/delete/${id}`, {
             method: 'DELETE',
         })
         .then(res => res.json())
@@ -19,11 +19,18 @@ const ManageServiceCard = ({ service }) => {
         .catch(error=>console.log(error))    
     }
 
+    const art = {
+        backgroundColor: "rgb(112, 112, 206)",
+        width:"300px",
+        marginBottom:"50px",
+        borderRadius:"10px",
+    }
+
     return (
-        <div style={{backgroundColor:"green"}} className = "col bookCardDetail py-5 my-5 ms-5 text-white" >
+        <div style={art} className = "col bookCardDetail py-5 ms-5 text-white" >
             <h5>{service.name}</h5>
             <h6>Service Charge: {service.price} Tk</h6>
-            <button onClick={() => handleServiceRemove(service._id)} id="removeBtn"><img style={{ width: '30px' }} src={remove} alt="/"></img></button>
+            <button className="deleteBtn" onClick={() => handleServiceRemove(service._id)} id="removeBtn"><img style={{ width: '40px' }} src={remove} alt="/"></img></button>
         </div >
     );
 };

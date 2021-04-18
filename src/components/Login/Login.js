@@ -2,11 +2,10 @@ import './Login.css';
 import React, { useContext, useState } from 'react';
 import firebase from "firebase/app";
 import "firebase/auth";
-import { faGoogle } from '@fortawesome/free-brands-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faFacebookF, faInstagram, faGoogle } from '@fortawesome/free-brands-svg-icons';
 import { UserContext } from '../../App';
 import { useHistory, useLocation } from 'react-router';
-import logo from '../../Images/wilson.png';
 import googleIcon from '../../Images/googleIcon.png';
 import firebaseConfig from './firebase.config';
 
@@ -88,14 +87,12 @@ const Login = () => {
 
 
     return (
-        <div className="header">
-            {/* <img className="imgStyle" src={logo} alt=""></img> */}
-            <h1>Login</h1>
-            <div className="SignIn">
-                <h2>__________Sign In__________</h2>
-                <button onClick={handleSignInWithGoogle}> <span> <img id="googleIcon" src={googleIcon} alt="/"></img> </span>   Continue With Google</button>
+        <div className="header py-5">
+            <div className="SignIn py-5">
+                <h1 className="brandTitle">Log In</h1>
+                <h1 className="brandTitle mb-5">________</h1>
+                <button className="brandButton" onClick={handleSignInWithGoogle}> <span><FontAwesomeIcon className="google" icon={faGoogle} /></span>   Continue with Google</button>
             </div>
-
         </div>
     );
 };

@@ -1,10 +1,10 @@
 .checkout-body{
-    background-image: url('../../../Images/1.jpg');
+    background-image: url('../../../Images/test.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     position: relative;
     height: 600px;
-    width:1200px;
+    width:1550px;
     background-position: center center;
 }
 

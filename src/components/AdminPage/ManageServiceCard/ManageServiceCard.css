@@ -5,6 +5,16 @@
     /* background-color:darkslategray; */
 }
 
+.deleteBtn{
+    border-radius: 40px;
+    background-color:pink
+}
+
+
+.deleteBtn img{
+    border-radius: 20px;
+}
+
 
 /* .bookCardDetail:hover {
     transform: scale(1.2);
