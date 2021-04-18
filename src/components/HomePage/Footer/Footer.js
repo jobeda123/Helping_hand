@@ -16,11 +16,8 @@ const Footer = () => {
     const services = [
         { name: "House Shift"},
         { name: "House Clean" },
-        { name: "Treatment of Personal Diseases"},
-        { name: "Tooth Extraction" },
-        { name: "Check Up"},
-        { name: "Check Up"},
-        { name: "Check Up"}
+        { name: "Electrician Sevice"},
+        { name: "Painting House" },
     ]
     return (
         <footer className="footer-area clear-both">
